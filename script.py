@@ -17,6 +17,7 @@ def run(playwright: Playwright) -> None:
     context.set_default_navigation_timeout(100000000)
     
     pag = 1 #Iniciar na páginação 1
+    #Link da página com filtro
     page.goto(f"https://cearatransparente.ce.gov.br/portal-da-transparencia/servidores?cod_orgao=221&functional_status=+&integration_supports_server_role_id=246&locale=&month_year=08%2F2022&page={pag}&search=&sort_column=&sort_direction=&__=__")  
     page.locator('xpath=/html/body/div[5]/div[2]/div/div/div[1]/button/span').click() #fechar popup 1
     page.locator('body > div.card.privacy_statement.text-justify > div:nth-child(4) > div > a').click() #fechar popup 2 aceita termos
